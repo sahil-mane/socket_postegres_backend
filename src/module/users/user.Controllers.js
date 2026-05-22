@@ -1,6 +1,6 @@
 const { ApiResponse } = require("../../utils/ApiResponse");
 const { asyncHandler } = require("../../utils/asyncHandler");
-const { createUserService, loginUserSerivce } = require("./user.Services");
+const { createUserService, loginUserSerivce } = require("./user.services");
 
 module.exports = {
   createUser: asyncHandler(async (req, res) => {

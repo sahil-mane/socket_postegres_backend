@@ -1,6 +1,6 @@
 import { ApiError } from "../../utils/ApiError.js";
 import { generateToken } from "../../utils/jwt.js";
-import { createUserRepo, getUserRepo } from "./user.Repository.js";
+import { createUserRepo, getUserRepo } from "./user.repository.js";
 import bcrypt from "bcrypt";
 
 export const createUserService = async (data) => {

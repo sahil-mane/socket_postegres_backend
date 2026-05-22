@@ -2,7 +2,7 @@ import { ApiError } from "../../utils/ApiError.js";
 import {
   createTodoRepository,
   getAllTodoRepository,
-} from "./todos.Repository.js";
+} from "./todos.repository.js";
 
 export const createTodoService = async (data) => {
   const { title, description, dueDate, id, username } = data;
