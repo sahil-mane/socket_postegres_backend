@@ -1,7 +1,7 @@
 const express = require("express");
 const cors = require("cors");  
-const userRoutes = require("./module/users/users.Routes");
-const todoRoutes = require("./module/todos/todos.routes");
+const userRoutes = require("./module/users/users.Routes.js");
+const todoRoutes = require("./module/todos/todos.routes.js");
 const app = express();
 
 app.use(express.json()); 
