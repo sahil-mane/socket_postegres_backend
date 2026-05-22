@@ -1,8 +1,8 @@
-const { ApiResponse } = require("../../utils/ApiResponse");
-const { asyncHandler } = require("../../utils/asyncHandler");
-const { createUserService, loginUserSerivce } = require("./user.services");
+import { ApiResponse } from "../../utils/ApiResponse.js";
+import { asyncHandler } from "../../utils/asyncHandler.js";
+import { createUserService, loginUserSerivce } from "./user.services.js";
 
-module.exports = {
+const userControllers = {
   createUser: asyncHandler(async (req, res) => {
     const createUser = await createUserService(req.body);
 
@@ -19,3 +19,6 @@ module.exports = {
       .json(new ApiResponse(200, loginUser, "user login successfully"));
   }),
 };
+
+export default userControllers;
+

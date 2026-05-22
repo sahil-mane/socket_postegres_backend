@@ -1,9 +1,8 @@
-const { json } = require("express");
-const { ApiResponse } = require("../../utils/ApiResponse");
-const { asyncHandler } = require("../../utils/asyncHandler");
-const { createTodoService, getAllTodoService } = require("./todos.service");
+import { ApiResponse } from "../../utils/ApiResponse.js";
+import { asyncHandler } from "../../utils/asyncHandler.js";
+import { createTodoService, getAllTodoService } from "./todos.service.js";
 
-module.exports = {
+const todoController = {
   createTodo: asyncHandler(async (req, res) => {
     const { id, username } = req.user;
 
@@ -29,3 +28,5 @@ module.exports = {
       .json(new ApiResponse(200, getAllTodos, "Todos Fetch Successfully"));
   }),
 };
+
+export default todoController;

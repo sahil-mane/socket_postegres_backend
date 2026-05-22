@@ -1,8 +1,8 @@
-const http = require("http");
-const { config } = require("dotenv");
-const app = require("./src/app.js");
-const { Server } = require("socket.io");
-const { default: setupSocket } = require("./src/config/socket.js");
+import http from "http";
+import { config } from "dotenv";
+import app from "./src/app.js";
+import { Server } from "socket.io";
+import setupSocket from "./src/config/socket.js";
 
 const server = http.createServer(app);
 
@@ -16,7 +16,7 @@ const io = new Server(server, {
 config();
 setupSocket(io);
 
-app.set("io",io)
+app.set("io", io);
 
 const PORT = process.env.PORT || 5000;
 server.listen(PORT, () => {

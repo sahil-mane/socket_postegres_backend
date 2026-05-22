@@ -1,15 +1,14 @@
-const express = require("express");
-const cors = require("cors");  
-const userRoutes = require("./module/users/users.routes.js");
-const todoRoutes = require("./module/todos/todos.routes.js");
+import express from "express";
+import cors from "cors";
+import userRoutes from "./module/users/users.routes.js";
+import todoRoutes from "./module/todos/todos.routes.js";
+
 const app = express();
 
-app.use(express.json()); 
-app.use(cors())
+app.use(express.json());
+app.use(cors());
 app.use("/api/v1/auth", userRoutes);
 app.use("/api/v1/todo", todoRoutes);
-
-
 
 app.use((err, req, res, next) => {
   return res.status(500).json({
@@ -18,4 +17,4 @@ app.use((err, req, res, next) => {
   });
 });
 
-module.exports = app;
+export default app;
