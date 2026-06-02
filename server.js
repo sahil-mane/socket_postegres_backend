@@ -1,5 +1,6 @@
-import http from "http";
 import { config } from "dotenv";
+config();
+import http from "http";
 import app from "./src/app.js";
 import { Server } from "socket.io";
 import setupSocket from "./src/config/socket.js";
@@ -13,7 +14,7 @@ const io = new Server(server, {
   },
 });
 
-config();
+
 setupSocket(io);
 console.log("DATABASE_URL =", process.env.DATABASE_URL);
 
