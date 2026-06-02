@@ -15,6 +15,7 @@ const io = new Server(server, {
 
 config();
 setupSocket(io);
+console.log("DATABASE_URL =", process.env.DATABASE_URL);
 
 app.set("io", io);
 
